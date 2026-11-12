@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <h1>Hello, I'm <span>Rudra Prasad Swain</span><br>Python Backend Developer</h1>
+            <p>B.Tech graduate in Electronics and Telecommunication Engineering, building database-driven web applications with Python, FastAPI and MySQL.</p>
+            <a class="btn" href="#projects">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+        <img class="profile-img" src="{{ url_for('static',path='/image/resume_image.jpeg') }}" alt="profile pic" width="150">
+    </div>
+</section>
+
+<section id="about" class="section">
+    <div class="section-head">
+        <h2>About Me</h2>
+        <p>Get to know me better</p>
+    </div>
+    <div class="about">
+        <div class="about-text">
+            <p>B.Tech graduate in Electronics and Telecommunication Engineering with hands-on experience building database-driven web applications using Python, FastAPI, and MySQL.</p>
+            <p>I have built three full-stack projects with REST APIs, CRUD operations, and parameterized SQL queries. I enjoy problem solving and I am keen to grow as a backend developer.</p>
+            <p>Beyond code, I coordinated the Audio Visual Club during my B.Tech and won gold medal in a District Badminton Tournament.</p>
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <b>3</b>
+                <p>Full-Stack Projects</p>
+            </div>
+            <div class="stat">
+                <b>2</b>
+                <p>Internships</p>
+            </div>
+            <div class="stat">
+                <b>7.82</b>
+                <p>B.Tech CGPA</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="skills">
+    <div class="section-head"><h2>Technical Skills</h2><p>Technologies I work with</p></div>
+    <div class="grid">
+        <div class="card">
+            <h3>Languages</h3>
+            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">HTML</span><span class="chip">CSS</span>
+        </div>
+        <div class="card">
+            <h3>Frameworks &amp; Libraries</h3>
+            <span class="chip">FastAPI</span><span class="chip">Jinja2</span><span class="chip">Pydantic</span><span class="chip">Requests</span><span class="chip">mysql-connector-python</span>
+        </div>
+        <div class="card">
+            <h3>Database</h3>
+            <span class="chip">MySQL</span>
+        </div>
+        <div class="card">
+            <h3>Tools</h3>
+            <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">MySQL Workbench</span><span class="chip">Uvicorn</span>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="experience">
+    <div class="section-head"><h2>Experience &amp; Education</h2><p>My journey so far</p></div>
+    <div class="grid">
+        <div class="card">
+            <small class="period">May 2024 - June 2024</small>
+            <h3>Research Intern - DRDO, Chandipur</h3>
+            <p>Worked with telemetry systems for data collection and monitoring during test-range operations, supporting real-time analysis and operational safety.</p>
+        </div>
+        <div class="card">
+            <small class="period">Feb 2022 - Mar 2022</small>
+            <h3>IoT &amp; Embedded Systems Intern - Coincent</h3>
+            <p>Engineered and deployed embedded-system solutions for industrial automation applications.</p>
+        </div>
+        <div class="card">
+            <small class="period">2021 - 2025</small>
+            <h3>B.Tech, Electronics &amp; Telecommunication</h3>
+            <p>Veer Surendra Sai University of Technology (VSSUT), Odisha. CGPA: 7.82</p>
+        </div>
+        <div class="card">
+            <small class="period">2018 - 2020</small>
+            <h3>Intermediate (PCMB)</h3>
+            <p>Royal Higher Secondary School of Science and Technology. 87.16%</p>
+        </div>
+        <div class="card">
+            <small class="period">2018</small>
+            <h3>Matriculation</h3>
+            <p>Madanpur Mohabir Nodal High School. 92%</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="projects">
+    <div class="section-head"><h2>Featured Projects</h2><p>Some of my recent work</p></div>
+    <div class="grid">
+        <div class="card">
+            <h3>Expense Tracker Web App</h3>
+            <ul>
+                <li>Full-stack app using FastAPI and Jinja2 templates with MySQL storage.</li>
+                <li>Category search, date-range filtering, and total/highest expense queries using parameterized SQL.</li>
+            </ul>
+            <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">MySQL</span><span class="chip">Jinja2</span><span class="chip">HTML</span><span class="chip">CSS</span>
+            <p><a href="#" class="card-link">View on GitHub</a></p>
+        </div>
+
+        <div class="card">
+            <h3>Student Task Manager</h3>
+            <ul>
+                <li>REST API built with FastAPI and MySQL Connector for creating, retrieving, updating, and deleting tasks.</li>
+                <li>CRUD endpoints with parameterized queries for secure data handling.</li>
+            </ul>
+            <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">MySQL</span>
+            <p><a href="#" class="card-link">View on GitHub</a></p>
+        </div>
+
+        <div class="card">
+            <h3>Weather Forecasting App</h3>
+            <ul>
+                <li>Fetches real-time weather data from WeatherAPI for any city entered in an HTML form.</li>
+                <li>Stores every search in MySQL and exposes a search-history endpoint.</li>
+            </ul>
+            <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">MySQL</span><span class="chip">REST API</span><span class="chip">HTML</span>
+            <p><a href="#" class="card-link">View on GitHub</a></p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="section-head"><h2>Get In Touch</h2><p>Let's work together</p></div>
+    <div class="about">
+        <div class="contact-info">
+            <h3>Let’s Connect</h3>
+            <p>I’m open to backend developer opportunities. Feel free to reach out!</p>
+            <p>✉ swainrudraprasad25@gmail.com<br>📞 +91-8260708259<br>
+               <a href="#">GitHub</a> · <a href="#">LinkedIn</a></p>
+        </div>
+        <form action="/contact" method="post" class="contact-form">
+            {% if status == 'success' %}
+            <div class="alert ok">Thanks! Your message was sent.</div>
+            {% endif %}
+            {% if status == 'error' %}
+            <div class="alert bad">Please fill all fields with a valid email and a message of at least 10 characters.</div>
+            {% endif %}
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
