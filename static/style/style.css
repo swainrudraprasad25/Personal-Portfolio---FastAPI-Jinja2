@@ -40,12 +40,21 @@ a{
 .nav a:hover{
     color: #0d9488;
 }
-.nav .theme-link{
-    padding: 3px 12px;
-    border: 1px solid #0d9488;
-    border-radius: 20px;
-    color: #0d9488;
-
+.nav .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 0px solid #0d9488;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.nav .theme-toggle:hover {
+    background-color: rgba(13, 148, 136, 0.1);
+    transform: rotate(30deg);
 }
 .hero {
     background-color: #0f766e;
@@ -221,6 +230,9 @@ a{
 .site-footer p {
     margin: 0;
 }
+.link{
+    text-decoration: none;
+}
 body.dark {
     background-color: #071a1a;
     color: #e6fffb;
@@ -247,9 +259,11 @@ body.dark .nav a:hover {
     color: #2dd4bf;
 }
  
-body.dark .nav .theme-link {
-    border: 1px solid #2dd4bf;
-    color: #2dd4bf;
+body.dark .nav .theme-toggle {
+    border: 0px solid #2dd4bf;
+}
+body.dark .nav .theme-toggle:hover {
+    background-color: rgba(45, 212, 191, 0.1);
 }
  
 body.dark .section-head p,
