@@ -43,88 +43,55 @@
 <section class="section" id="skills">
     <div class="section-head"><h2>Technical Skills</h2><p>Technologies I work with</p></div>
     <div class="grid">
+        {% for s in skills %}
         <div class="card">
-            <h3>Languages</h3>
-            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">HTML</span><span class="chip">CSS</span>
+            <h3>{{ s.category }}</h3>
+            {% for item in s.skills.split(',') %}
+            <span class="chip">{{ item.strip() }}</span>
+            {% endfor %}
         </div>
-        <div class="card">
-            <h3>Frameworks &amp; Libraries</h3>
-            <span class="chip">FastAPI</span><span class="chip">Jinja2</span><span class="chip">Pydantic</span><span class="chip">Requests</span><span class="chip">mysql-connector-python</span>
-        </div>
-        <div class="card">
-            <h3>Database</h3>
-            <span class="chip">MySQL</span>
-        </div>
-        <div class="card">
-            <h3>Tools</h3>
-            <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">MySQL Workbench</span><span class="chip">Uvicorn</span>
-        </div>
+        {% endfor %}
     </div>
 </section>
 
 <section class="section" id="experience">
     <div class="section-head"><h2>Experience &amp; Education</h2><p>My journey so far</p></div>
     <div class="grid">
+        {% for exp in experiences %}
         <div class="card">
-            <small class="period">May 2024 - June 2024</small>
-            <h3>Research Intern - DRDO, Chandipur</h3>
-            <p>Worked with telemetry systems for data collection and monitoring during test-range operations, supporting real-time analysis and operational safety.</p>
+            <small class="period">{{ exp.period }}</small>
+            <h3>{{ exp.title }}</h3>
+            <p>{{ exp.description }}</p>
         </div>
-        <div class="card">
-            <small class="period">Feb 2022 - Mar 2022</small>
-            <h3>IoT &amp; Embedded Systems Intern - Coincent</h3>
-            <p>Engineered and deployed embedded-system solutions for industrial automation applications.</p>
-        </div>
-        <div class="card">
-            <small class="period">2021 - 2025</small>
-            <h3>B.Tech, Electronics &amp; Telecommunication</h3>
-            <p>Veer Surendra Sai University of Technology (VSSUT), Odisha. CGPA: 7.82</p>
-        </div>
-        <div class="card">
-            <small class="period">2018 - 2020</small>
-            <h3>Intermediate (PCMB)</h3>
-            <p>Royal Higher Secondary School of Science and Technology. 87.16%</p>
-        </div>
-        <div class="card">
-            <small class="period">2018</small>
-            <h3>Matriculation</h3>
-            <p>Madanpur Mohabir Nodal High School. 92%</p>
-        </div>
+        {% endfor %}
     </div>
 </section>
 
 <section class="section" id="projects">
     <div class="section-head"><h2>Featured Projects</h2><p>Some of my recent work</p></div>
     <div class="grid">
+        {% for p in projects %}
         <div class="card">
-            <h3>Expense Tracker Web App</h3>
+            <h3>{{ p.title }}</h3>
+            {% if '\n' in p.description %}
             <ul>
-                <li>Full-stack app using FastAPI and Jinja2 templates with MySQL storage.</li>
-                <li>Category search, date-range filtering, and total/highest expense queries using parameterized SQL.</li>
+                {% for bullet in p.description.split('\n') %}
+                {% if bullet.strip() %}
+                <li>{{ bullet.strip() }}</li>
+                {% endif %}
+                {% endfor %}
             </ul>
-            <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">MySQL</span><span class="chip">Jinja2</span><span class="chip">HTML</span><span class="chip">CSS</span>
-            <p><a href="https://github.com/swainrudraprasad25/expense-tracker-fastapi.git" class="card-link" target="_blank">View on GitHub</a></p>
+            {% else %}
+            <p>{{ p.description }}</p>
+            {% endif %}
+            {% for tech in p.technologies.split(',') %}
+            <span class="chip">{{ tech.strip() }}</span>
+            {% endfor %}
+            {% if p.github_url %}
+            <p><a href="{{ p.github_url }}" class="card-link" target="_blank">View on GitHub</a></p>
+            {% endif %}
         </div>
-
-        <div class="card">
-            <h3>Student Task Manager</h3>
-            <ul>
-                <li>REST API built with FastAPI and MySQL Connector for creating, retrieving, updating, and deleting tasks.</li>
-                <li>CRUD endpoints with parameterized queries for secure data handling.</li>
-            </ul>
-            <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">MySQL</span>
-            <p><a href="https://github.com/swainrudraprasad25/student_task_manager.git" class="card-link" target="_blank">View on GitHub</a></p>
-        </div>
-
-        <div class="card">
-            <h3>Weather Forecasting App</h3>
-            <ul>
-                <li>Fetches real-time weather data from WeatherAPI for any city entered in an HTML form.</li>
-                <li>Stores every search in MySQL and exposes a search-history endpoint.</li>
-            </ul>
-            <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">MySQL</span><span class="chip">REST API</span><span class="chip">HTML</span>
-            <p><a href="https://github.com/swainrudraprasad25/Weather-Forecasting-App-FastAPI-WeatherAPI-MySQL-.git " class="card-link" target="_blank">View on GitHub</a></p>
-        </div>
+        {% endfor %}
     </div>
 </section>
 
